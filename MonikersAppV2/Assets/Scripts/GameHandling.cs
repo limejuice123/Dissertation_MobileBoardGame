@@ -115,14 +115,23 @@ public class GameHandling : MonoBehaviour
 		currentCard.transform.position = new Vector2 (0f, -0.4f);
 	}
 
+	void NextCard()
+	{
+		counter = counter + 1;
+		currentCard.GetComponent<SpriteRenderer> ().enabled = false;
+		currentCard = wonCards [counter];
+		currentCard.GetComponent<SpriteRenderer> ().enabled = true;
+		currentCard.transform.position = new Vector2 (0f, -0.4f);
+	}
+
 	void Update () 
 	{
 		if (currentScene.name == "deckbuilding") 
 		{
-			if (Input.GetKey ("d"))
+			if (Input.GetKey ("d") || Input.touchCount > 0 && Input.GetTouch(0).phase == TouchPhase.Moved)
 				currentCard.transform.Translate (10f * Time.deltaTime, 0f, 0f);
 
-			if (Input.GetKey ("a"))
+			if (Input.GetKey ("a") || Input.touchCount > 0 && Input.GetTouch(0).phase == TouchPhase.Moved)
 				currentCard.transform.Translate (-10f * Time.deltaTime, 0f, 0f);
 
 			if (currentCard.transform.position.x >= GameObject.Find ("YayTag").GetComponent<Transform> ().position.x)
@@ -150,10 +159,10 @@ public class GameHandling : MonoBehaviour
 				timer_text.text = timer.ToString ("F");
 			}
 
-			if (Input.GetKey ("d"))
+			if (Input.GetKey ("d") || Input.touchCount > 0 && Input.GetTouch(0).phase == TouchPhase.Moved)
 				currentCard.transform.Translate (10f * Time.deltaTime, 0f, 0f);
 
-			if (Input.GetKey ("a"))
+			if (Input.GetKey ("a") || Input.touchCount > 0 && Input.GetTouch(0).phase == TouchPhase.Moved)
 				currentCard.transform.Translate (-10f * Time.deltaTime, 0f, 0f);
 
 			if (currentCard.transform.position.x >= GameObject.Find ("YayTag").GetComponent<Transform> ().position.x)
@@ -171,24 +180,19 @@ public class GameHandling : MonoBehaviour
 
 		if (currentScene.name == "finish") 
 		{
-			if (Input.GetKey ("d"))
-				currentCard.transform.Translate (10f * Time.deltaTime, 0f, 0f);
-
-			if (Input.GetKey ("a"))
-				currentCard.transform.Translate (-10f * Time.deltaTime, 0f, 0f);
-
-			if (currentCard.transform.position.x >= GameObject.Find ("YayTag").GetComponent<Transform> ().position.x) 
+			if (Input.GetKeyUp("d") || Input.touchCount > 0 && Input.GetTouch(0).phase == TouchPhase.Moved)
 			{
-				counter++;
-				currentCard = wonCards [counter];
-				currentCard.transform.position = new Vector2 (0f, -0.4f);
+				currentCard.transform.Translate (10f * Time.deltaTime, 0f, 0f);
 			}
 
-			if (currentCard.transform.position.x <= GameObject.Find ("NayTag").GetComponent<Transform> ().position.x) 
+			if (Input.GetKeyUp ("a") || Input.touchCount > 0 && Input.GetTouch(0).phase == TouchPhase.Moved) 
 			{
-				counter++;
-				currentCard = wonCards [counter];
-				currentCard.transform.position = new Vector2 (0f, -0.4f);
+				currentCard.transform.Translate (10f * Time.deltaTime, 0f, 0f);
+			}
+
+			if (currentCard.transform.position.x != 0f) 
+			{
+				NextCard ();
 			}
 
 			if (counter >= wonCards.Count) 

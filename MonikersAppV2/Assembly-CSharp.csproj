@@ -52,7 +52,9 @@
   </ItemGroup>
   <ItemGroup>
      <Compile Include="Assets\Scripts\AppNavigation\AddAllCards.cs" />
+     <Compile Include="Assets\Scripts\AppNavigation\BackToDeckBuild.cs" />
      <Compile Include="Assets\Scripts\AppNavigation\FinishedBuilding.cs" />
+     <Compile Include="Assets\Scripts\AppNavigation\NextRound.cs" />
      <Compile Include="Assets\Scripts\AppNavigation\PressPlay.cs" />
      <Compile Include="Assets\Scripts\GameHandling.cs" />
  <Reference Include="UnityEngine.UI">
