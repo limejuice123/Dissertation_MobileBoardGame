@@ -57,6 +57,8 @@ public class GameHandling : MonoBehaviour
 		{
 			currentScene = scene;
 			counter = 0;
+			countdown = 3;
+			timer = 0;
 			timer_text = GameObject.Find ("timer").GetComponent<Text> ();
 			countdown_text = GameObject.Find ("Countdown").GetComponent<Text> ();
 			currentCard = cardsInPlay [counter];
@@ -129,12 +131,6 @@ public class GameHandling : MonoBehaviour
 	{
 		if (currentScene.name == "deckbuilding") 
 		{
-			/*if (Input.GetKey ("d") || Input.touchCount > 0 && Input.GetTouch(0).phase == TouchPhase.Stationary)
-				currentCard.transform.Translate (10f * Time.deltaTime, 0f, 0f);
-
-			if (Input.GetKey ("a") || Input.touchCount > 0 && Input.GetTouch(0).phase == TouchPhase.Stationary)
-				currentCard.transform.Translate (-10f * Time.deltaTime, 0f, 0f);*/
-
 			if (Input.touchCount > 0 && Input.GetTouch (0).phase == TouchPhase.Moved) 
 			{
 				Vector3 touchPosition = Input.GetTouch (0).deltaPosition;
@@ -184,12 +180,6 @@ public class GameHandling : MonoBehaviour
 
 			}
 
-			/*if (Input.GetKey ("d") || Input.touchCount > 0 && Input.GetTouch(0).phase == TouchPhase.Stationary)
-				currentCard.transform.Translate (10f * Time.deltaTime, 0f, 0f);
-
-			if (Input.GetKey ("a") || Input.touchCount > 0 && Input.GetTouch(0).phase == TouchPhase.Stationary)
-				currentCard.transform.Translate (-10f * Time.deltaTime, 0f, 0f); */
-
 			if (currentCard.transform.position.x >= GameObject.Find ("YayTag").GetComponent<Transform> ().position.x)
 				WinCard ();
 
@@ -217,17 +207,7 @@ public class GameHandling : MonoBehaviour
 
 			}
 
-			/*if (Input.GetKeyUp("d") || Input.touchCount > 0 && Input.GetTouch(0).phase == TouchPhase.Stationary)
-			{
-				currentCard.transform.Translate (10f * Time.deltaTime, 0f, 0f);
-			}
-
-			if (Input.GetKeyUp ("a") || Input.touchCount > 0 && Input.GetTouch(0).phase == TouchPhase.Stationary) 
-			{
-				currentCard.transform.Translate (10f * Time.deltaTime, 0f, 0f);
-			} */
-
-			if (currentCard.transform.position.x != 0f) 
+			if (currentCard.transform.position.x >= GameObject.Find("YayTag").transform.position.x || currentCard.transform.position.x <= GameObject.Find("NayTag").transform.position.x) 
 			{
 				NextCard ();
 			}

@@ -21,6 +21,7 @@ public class NextRound : MonoBehaviour
 		gamehandling.currentCard.GetComponent<SpriteRenderer> ().enabled = false;
 		gamehandling.wonCards.Clear();
 		gamehandling.counter = 0;
+		//gamehandling.currentCard.GetComponent<SpriteRenderer> ().enabled = true;
 		SceneManager.LoadScene ("game");
 	}
 }

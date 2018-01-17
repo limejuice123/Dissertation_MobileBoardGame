@@ -1,9 +1,9 @@
 ﻿<Properties StartupItem="Assembly-CSharp.csproj">
   <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" PreferredExecutionTarget="Unity.Instance.Unity Editor" />
-  <MonoDevelop.Ide.Workbench ActiveDocument="Assets\Scripts\GameHandling.cs">
+  <MonoDevelop.Ide.Workbench ActiveDocument="Assets\Scripts\AppNavigation\NextRound.cs">
     <Files>
-      <File FileName="Assets\Scripts\GameHandling.cs" Line="228" Column="8" />
-      <File FileName="Assets\Scripts\AppNavigation\NextRound.cs" Line="1" Column="1" />
+      <File FileName="Assets\Scripts\GameHandling.cs" Line="212" Column="17" />
+      <File FileName="Assets\Scripts\AppNavigation\NextRound.cs" Line="24" Column="5" />
       <File FileName="Assets\Scripts\AppNavigation\BackToDeckBuild.cs" Line="1" Column="1" />
     </Files>
   </MonoDevelop.Ide.Workbench>
