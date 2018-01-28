@@ -237,11 +237,11 @@ MonoBehaviour:
   m_Script: {fileID: 1980459831, guid: f5f67c52d1564df4a8936ccd202a3bd8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_UiScaleMode: 1
+  m_UiScaleMode: 0
   m_ReferencePixelsPerUnit: 100
   m_ScaleFactor: 1
-  m_ReferenceResolution: {x: 960, y: 640}
-  m_ScreenMatchMode: 1
+  m_ReferenceResolution: {x: 800, y: 600}
+  m_ScreenMatchMode: 0
   m_MatchWidthOrHeight: 0
   m_PhysicalUnit: 3
   m_FallbackScreenDPI: 96
@@ -275,7 +275,7 @@ RectTransform:
   m_GameObject: {fileID: 567838761}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 90}
-  m_LocalScale: {x: 0.015625, y: 0.015625, z: 0.015625}
+  m_LocalScale: {x: 0.016051365, y: 0.016051365, z: 0.016051365}
   m_Children:
   - {fileID: 717607687}
   - {fileID: 2130830814}
@@ -482,13 +482,6 @@ MonoBehaviour:
   cardSprites: []
   addedCard: {fileID: 0}
   counter: 0
-  cardsInPlay: []
-  cardCount_Text: {fileID: 0}
-  countdown_text: {fileID: 0}
-  countdown: 3
-  wonCards: []
-  timer: 0
-  timer_text: {fileID: 0}
 --- !u!1 &1536074265
 GameObject:
   m_ObjectHideFlags: 0
