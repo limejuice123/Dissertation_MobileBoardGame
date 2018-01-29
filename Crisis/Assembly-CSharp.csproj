@@ -51,6 +51,8 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+     <Compile Include="Assets\Scripts\Gameplay\Countdown.cs" />
+     <Compile Include="Assets\Scripts\Gameplay\Gameplay.cs" />
      <Compile Include="Assets\Scripts\Navigation\PressPlay.cs" />
  <Reference Include="UnityEngine.UI">
  <HintPath>C:/Program Files/Unity/Editor/Data/UnityExtensions/Unity/GUISystem/UnityEngine.UI.dll</HintPath>
