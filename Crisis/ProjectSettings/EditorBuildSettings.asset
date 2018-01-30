@@ -11,3 +11,6 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/game.unity
     guid: 268a5c5a4e6d1f949907972a33143642
+  - enabled: 1
+    path: Assets/Scenes/winlose.unity
+    guid: b3eecf079aeba134e82801565b47a484

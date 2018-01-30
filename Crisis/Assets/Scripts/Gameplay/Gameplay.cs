@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.SceneManagement;
 
 public class Gameplay : MonoBehaviour 
 {
@@ -14,7 +15,7 @@ public class Gameplay : MonoBehaviour
 	public int howManyLeft;
 	public int resourceNeeded;
 	public float timer;
-
+	public bool needNewResource;
 
 	void Start () 
 	{
@@ -30,7 +31,26 @@ public class Gameplay : MonoBehaviour
 
 	void PickNewNeededResource()
 	{
+		resourceNeeded = Random.Range (0, 3);
+		switch (resourceNeeded) 
+		{
+		case 0:
+			resourceNeeded_SpriteRend.sprite = resourceNeeded_Sprite [resourceNeeded];
+			Debug.Log (resourceNeeded);
+			break;
 		
+		case 1:
+			resourceNeeded_SpriteRend.sprite = resourceNeeded_Sprite [resourceNeeded];
+			Debug.Log (resourceNeeded);
+			break;
+
+		case 2:
+			resourceNeeded_SpriteRend.sprite = resourceNeeded_Sprite [resourceNeeded];
+			Debug.Log (resourceNeeded);
+			break;
+		}
+
+		needNewResource = false;
 	}
 
 	void Update () 
@@ -45,6 +65,27 @@ public class Gameplay : MonoBehaviour
 		if (prepcanvas.enabled != true) 
 		{
 			timer = timer - Time.deltaTime;
+
+			if (needNewResource)
+				PickNewNeededResource ();
+
+			if (Input.GetTouch (0).phase == TouchPhase.Began && Input.touchCount > 0) 
+			{
+				Transform UpTag = GameObject.Find ("UpTag").transform;
+				Transform DownTag = GameObject.Find ("DownTag").transform;
+
+				if (Input.GetTouch (0).position.y >= DownTag.position.y || Input.GetTouch (0).position.y <= UpTag.position.y) 
+				{
+					PickNewNeededResource ();
+					howManyLeft--;
+				}
+			}
+
+			if (timer <= 0)
+				SceneManager.LoadScene ("winlose");
+
+			if (howManyLeft <= 0)
+				SceneManager.LoadScene ("winlose");
 		}
 	}
 }
