@@ -16,9 +16,11 @@ public class Gameplay : MonoBehaviour
 	public int resourceNeeded;
 	public float timer;
 	public bool needNewResource;
+	public bool didWin;
 
 	void Start () 
 	{
+		DontDestroyOnLoad (this.gameObject);
 		prepcanvas = GameObject.Find ("PrepCanvas").GetComponent<Canvas> ();
 		timerText = GameObject.Find ("TimerText").GetComponent<Text> ();
 		timerSlider = GameObject.Find ("TimeSlider").GetComponent<Slider> ();
@@ -81,11 +83,17 @@ public class Gameplay : MonoBehaviour
 				}
 			}
 
-			if (timer <= 0)
+			if (timer <= 0) 
+			{
+				didWin = false;
 				SceneManager.LoadScene ("winlose");
+			}
 
-			if (howManyLeft <= 0)
+			if (howManyLeft <= 0) 
+			{
+				didWin = true;
 				SceneManager.LoadScene ("winlose");
+			}
 		}
 	}
 }
