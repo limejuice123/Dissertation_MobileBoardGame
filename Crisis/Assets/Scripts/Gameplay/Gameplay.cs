@@ -8,12 +8,14 @@ public class Gameplay : MonoBehaviour
 {
 	public Canvas prepcanvas;
 	public Text timerText;
+	public Text amountNeeded_text;
 	public Slider timerSlider;
 	public Text howManyLeft_Text;
 	public SpriteRenderer resourceNeeded_SpriteRend;
 	public Sprite[] resourceNeeded_Sprite;
 	public int howManyLeft;
 	public int resourceNeeded;
+	public int amountNeeded;
 	public float timer;
 	public bool needNewResource;
 	public bool didWin;
@@ -26,8 +28,9 @@ public class Gameplay : MonoBehaviour
 		timerSlider = GameObject.Find ("TimeSlider").GetComponent<Slider> ();
 		howManyLeft_Text = GameObject.Find ("HowManyLeft").GetComponent<Text> ();
 		resourceNeeded_SpriteRend = GameObject.Find ("ResourceNeeded").GetComponent<SpriteRenderer> ();
+		amountNeeded_text = GameObject.Find ("AmountNeeded").GetComponent<Text> ();
 		howManyLeft = 20;
-		timer = 300f;
+		timer = 120f;
 		PickNewNeededResource ();
 	}
 
@@ -51,6 +54,9 @@ public class Gameplay : MonoBehaviour
 			Debug.Log (resourceNeeded);
 			break;
 		}
+
+		amountNeeded = Random.Range (3, 6);
+		amountNeeded_text.text = "x" + amountNeeded.ToString ();
 
 		needNewResource = false;
 	}
