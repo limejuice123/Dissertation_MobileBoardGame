@@ -30,7 +30,7 @@ public class Gameplay : MonoBehaviour
 		resourceNeeded_SpriteRend = GameObject.Find ("ResourceNeeded").GetComponent<SpriteRenderer> ();
 		amountNeeded_text = GameObject.Find ("AmountNeeded").GetComponent<Text> ();
 		howManyLeft = 20;
-		timer = 120f;
+		timer = 180f;
 		PickNewNeededResource ();
 	}
 
@@ -72,7 +72,13 @@ public class Gameplay : MonoBehaviour
 
 		if (prepcanvas.enabled != true) 
 		{
-			timer = timer - Time.deltaTime;
+			if (timer > 0)
+				timer = timer - Time.deltaTime;
+			else 
+			{
+				didWin = false;
+				SceneManager.LoadScene ("winlose");
+			}
 
 			if (needNewResource)
 				PickNewNeededResource ();
@@ -87,12 +93,6 @@ public class Gameplay : MonoBehaviour
 					PickNewNeededResource ();
 					howManyLeft--;
 				}
-			}
-
-			if (timer <= 0) 
-			{
-				didWin = false;
-				SceneManager.LoadScene ("winlose");
 			}
 
 			if (howManyLeft <= 0) 
