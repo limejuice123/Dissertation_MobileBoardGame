@@ -1,8 +1,11 @@
 ﻿<Properties StartupItem="Assembly-CSharp.csproj">
   <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" PreferredExecutionTarget="Unity.Instance.Unity Editor" />
-  <MonoDevelop.Ide.Workbench ActiveDocument="Assets\Scripts\MakeMapRed.cs">
+  <MonoDevelop.Ide.Workbench ActiveDocument="Assets\Scripts\AddPlayers.cs">
     <Files>
-      <File FileName="Assets\Scripts\MakeMapRed.cs" Line="23" Column="4" />
+      <File FileName="Assets\Scripts\MakeMapRed.cs" Line="1" Column="1" />
+      <File FileName="Assets\Scripts\TimeCount.cs" Line="1" Column="1" />
+      <File FileName="Assets\Scripts\Navigation\Play.cs" Line="19" Column="41" />
+      <File FileName="Assets\Scripts\AddPlayers.cs" Line="24" Column="39" />
     </Files>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.DebuggingService.Breakpoints>
