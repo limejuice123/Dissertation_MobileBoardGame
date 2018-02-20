@@ -52,6 +52,7 @@
   </ItemGroup>
   <ItemGroup>
      <Compile Include="Assets\Scripts\AddPlayers.cs" />
+     <Compile Include="Assets\Scripts\CheckHealth.cs" />
      <Compile Include="Assets\Scripts\MakeMapRed.cs" />
      <Compile Include="Assets\Scripts\Navigation\Play.cs" />
      <Compile Include="Assets\Scripts\TimeCount.cs" />
