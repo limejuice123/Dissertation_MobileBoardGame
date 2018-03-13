@@ -13,6 +13,7 @@ public class Gameplay : MonoBehaviour
 	public Text howManyLeft_Text;
 	public SpriteRenderer resourceNeeded_SpriteRend;
 	public SpriteRenderer callout;
+	public SpriteRenderer background;
 	public Sprite[] resourceNeeded_Sprite;
 	public int howManyLeft;
 	public int resourceNeeded;
@@ -30,6 +31,7 @@ public class Gameplay : MonoBehaviour
 		howManyLeft_Text = GameObject.Find ("HowManyLeft").GetComponent<Text> ();
 		resourceNeeded_SpriteRend = GameObject.Find ("ResourceNeeded").GetComponent<SpriteRenderer> ();
 		callout = GameObject.Find ("Callout").GetComponent<SpriteRenderer> ();
+		background = GameObject.Find ("Background").GetComponent<SpriteRenderer> ();
 		amountNeeded_text = GameObject.Find ("AmountNeeded").GetComponent<Text> ();
 		howManyLeft = 20;
 		timer = 180f;
@@ -46,6 +48,7 @@ public class Gameplay : MonoBehaviour
 			resourceNeeded_SpriteRend.color = Color.red;
 			callout.color = Color.red;
 			amountNeeded_text.color = Color.red;
+			background.color = Color.red;
 			Debug.Log (resourceNeeded);
 			break;
 		
@@ -54,6 +57,7 @@ public class Gameplay : MonoBehaviour
 			resourceNeeded_SpriteRend.color = Color.blue;
 			callout.color = Color.blue;
 			amountNeeded_text.color = Color.blue;
+			background.color = Color.blue;
 			Debug.Log (resourceNeeded);
 			break;
 
@@ -62,6 +66,7 @@ public class Gameplay : MonoBehaviour
 			resourceNeeded_SpriteRend.color = Color.yellow;
 			callout.color = Color.yellow;
 			amountNeeded_text.color = Color.yellow;
+			background.color = Color.yellow;
 			Debug.Log (resourceNeeded);
 			break;
 		}
