@@ -21,6 +21,7 @@ public class Gameplay : MonoBehaviour
 	public float timer;
 	public bool needNewResource;
 	public bool didWin;
+	public int textRandomiser;
 
 	void Start () 
 	{
@@ -40,7 +41,13 @@ public class Gameplay : MonoBehaviour
 
 	void PickNewNeededResource()
 	{
+		Color yellowtransparent = new Color (1f, 0.92f, 0.016f, 0.1f);
+		Color redtransparent = new Color (1f, 0f, 0f, 0.1f);
+		Color bluetransparent = new Color (0f, 0f, 1f, 0.1f);
 		resourceNeeded = Random.Range (0, 3);
+		textRandomiser = Random.Range (0, 3);
+		GUIStyle style = new GUIStyle ();
+		style.richText = true;
 		switch (resourceNeeded) 
 		{
 		case 0:
@@ -48,7 +55,7 @@ public class Gameplay : MonoBehaviour
 			resourceNeeded_SpriteRend.color = Color.red;
 			callout.color = Color.red;
 			amountNeeded_text.color = Color.red;
-			background.color = Color.red;
+			background.color = redtransparent;
 			Debug.Log (resourceNeeded);
 			break;
 		
@@ -57,7 +64,7 @@ public class Gameplay : MonoBehaviour
 			resourceNeeded_SpriteRend.color = Color.blue;
 			callout.color = Color.blue;
 			amountNeeded_text.color = Color.blue;
-			background.color = Color.blue;
+			background.color = bluetransparent;
 			Debug.Log (resourceNeeded);
 			break;
 
@@ -66,13 +73,25 @@ public class Gameplay : MonoBehaviour
 			resourceNeeded_SpriteRend.color = Color.yellow;
 			callout.color = Color.yellow;
 			amountNeeded_text.color = Color.yellow;
-			background.color = Color.yellow;
+			background.color = yellowtransparent;
 			Debug.Log (resourceNeeded);
 			break;
 		}
 
 		amountNeeded = Random.Range (3, 6);
-		amountNeeded_text.text = "x" + amountNeeded.ToString ();
+
+		switch (textRandomiser) 
+		{
+		case 0:
+			amountNeeded_text.text = "Quickly! I need that " + amountNeeded.ToString () + " part report!";
+			break;
+		case 1:
+			amountNeeded_text.text = "You have it? There should be " + amountNeeded.ToString () + " parts.";
+			break;
+		case 2:
+			amountNeeded_text.text = "That article should be here! It has " + amountNeeded.ToString () + " parts.";
+			break;
+		}
 
 		needNewResource = false;
 	}

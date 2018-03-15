@@ -4,7 +4,7 @@
     <Files>
       <File FileName="Assets\Scripts\Navigation\PressPlay.cs" Line="1" Column="1" />
       <File FileName="Assets\Scripts\Gameplay\Countdown.cs" Line="1" Column="1" />
-      <File FileName="Assets\Scripts\Gameplay\Gameplay.cs" Line="68" Column="4" />
+      <File FileName="Assets\Scripts\Gameplay\Gameplay.cs" Line="58" Column="37" />
       <File FileName="Assets\Scripts\Gameplay\DontHaveResource.cs" Line="1" Column="1" />
       <File FileName="Assets\Scripts\Gameplay\WinOrLose.cs" Line="1" Column="1" />
       <File FileName="Assets\Scripts\Gameplay\SoundControl.cs" Line="1" Column="1" />
