@@ -57,6 +57,7 @@
      <Compile Include="Assets\Scripts\Gameplay\SoundControl.cs" />
      <Compile Include="Assets\Scripts\Gameplay\WinOrLose.cs" />
      <Compile Include="Assets\Scripts\Gameplay\WinOrLose_Sound.cs" />
+     <Compile Include="Assets\Scripts\Navigation\BackToMenu.cs" />
      <Compile Include="Assets\Scripts\Navigation\PressPlay.cs" />
  <Reference Include="UnityEngine.UI">
  <HintPath>C:/Program Files/Unity/Editor/Data/UnityExtensions/Unity/GUISystem/UnityEngine.UI.dll</HintPath>

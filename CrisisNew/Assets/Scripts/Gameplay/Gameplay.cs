@@ -7,7 +7,7 @@ using UnityEngine.SceneManagement;
 public class Gameplay : MonoBehaviour 
 {
 	public Canvas prepcanvas;
-	//public Text timerText;
+	public Text timerText;
 	public Text amountNeeded_text;
 	public Slider timerSlider;
 	public Text howManyLeft_Text;
@@ -26,7 +26,7 @@ public class Gameplay : MonoBehaviour
 	{
 		DontDestroyOnLoad (this.gameObject);
 		prepcanvas = GameObject.Find ("PrepCanvas").GetComponent<Canvas> ();
-		//timerText = GameObject.Find ("TimerText").GetComponent<Text> ();
+		timerText = GameObject.Find ("TimerText").GetComponent<Text> ();
 		timerSlider = GameObject.Find ("TimeSlider").GetComponent<Slider> ();
 		howManyLeft_Text = GameObject.Find ("HowManyLeft").GetComponent<Text> ();
 		resourceNeeded_SpriteRend = GameObject.Find ("ResourceNeeded").GetComponent<SpriteRenderer> ();
@@ -75,10 +75,10 @@ public class Gameplay : MonoBehaviour
 
 	void Update () 
 	{
-		//string minutes = Mathf.Floor (timer / 60).ToString("0");
-		//string seconds = Mathf.Floor (timer % 60).ToString ("00");
+		string minutes = Mathf.Floor (timer / 60).ToString("0");
+		string seconds = Mathf.Floor (timer % 60).ToString ("00");
 
-		//timerText.text = minutes + ":" + seconds;
+		timerText.text = minutes + ":" + seconds;
 		timerSlider.value = timer;
 		howManyLeft_Text.text = howManyLeft.ToString() + " to win";
 
