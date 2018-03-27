@@ -16,6 +16,7 @@ public class PressPlay : MonoBehaviour
 
 	void TaskOnClick () 
 	{
-		SceneManager.LoadScene ("game");
+		Initiate.Fade ("game", Color.black, 2);
+		//SceneManager.LoadScene ("game");
 	}
 }

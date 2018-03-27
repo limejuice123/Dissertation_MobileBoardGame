@@ -110,7 +110,8 @@ public class Gameplay : MonoBehaviour
 			if (howManyLeft <= 0) 
 			{
 				didWin = true;
-				SceneManager.LoadScene ("winlose");
+				Initiate.Fade ("winlose", Color.black, 2);
+				//SceneManager.LoadScene ("winlose");
 			}
 		}
 	}

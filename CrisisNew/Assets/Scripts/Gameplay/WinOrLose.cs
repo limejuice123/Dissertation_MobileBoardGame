@@ -25,6 +25,7 @@ public class WinOrLose : MonoBehaviour
 
 	void TaskOnClick () 
 	{
-		SceneManager.LoadScene ("mainmenu");
+		Initiate.Fade ("mainmenu", Color.black, 2);
+		//SceneManager.LoadScene ("mainmenu");
 	}
 }

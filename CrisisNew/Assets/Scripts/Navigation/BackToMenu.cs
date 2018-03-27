@@ -13,12 +13,16 @@ public class BackToMenu : MonoBehaviour
 	{
 		exit = GameObject.Find ("Exit").GetComponent<Button> ();
 		exit.onClick.AddListener (TaskOnClick);
-		gamehandler = GameObject.Find ("GameHandler").GetComponent<GameObject> ();
 	}
 
 	void TaskOnClick ()
 	{
-		Destroy (gamehandler);
-		SceneManager.LoadScene ("mainmenu");
+		if (GameObject.Find ("GameHandler")) 
+		{
+			Destroy (GameObject.Find ("GameHandler"));
+		}
+
+		Initiate.Fade ("mainmenu", Color.black, 2);
+		//SceneManager.LoadScene ("mainmenu");
 	}
 }
