@@ -51,10 +51,12 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+     <Compile Include="Assets\Scripts\Ambience\MenuBackground.cs" />
      <Compile Include="Assets\Scripts\Gameplay\Countdown.cs" />
      <Compile Include="Assets\Scripts\Gameplay\DontHaveResource.cs" />
      <Compile Include="Assets\Scripts\Gameplay\Gameplay.cs" />
      <Compile Include="Assets\Scripts\Gameplay\SoundControl.cs" />
+     <Compile Include="Assets\Scripts\Gameplay\SoundScript.cs" />
      <Compile Include="Assets\Scripts\Gameplay\WinOrLose.cs" />
      <Compile Include="Assets\Scripts\Gameplay\WinOrLose_Sound.cs" />
      <Compile Include="Assets\Scripts\Navigation\BackToMenu.cs" />

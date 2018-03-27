@@ -100,7 +100,9 @@ public class Gameplay : MonoBehaviour
 				Transform UpTag = GameObject.Find ("UpTag").transform;
 				Transform DownTag = GameObject.Find ("DownTag").transform;
 
-				if (Input.GetTouch (0).position.y >= DownTag.position.y || Input.GetTouch (0).position.y <= UpTag.position.y) 
+				var pos = Camera.main.ScreenToWorldPoint (Input.GetTouch (0).position);
+
+				if (pos.y >= DownTag.position.y && pos.y <= UpTag.position.y) 
 				{
 					PickNewNeededResource ();
 					howManyLeft--;
