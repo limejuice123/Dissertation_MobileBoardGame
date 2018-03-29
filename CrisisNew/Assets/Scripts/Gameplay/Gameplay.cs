@@ -20,7 +20,8 @@ public class Gameplay : MonoBehaviour
 	public float timer;
 	public bool needNewResource;
 	public bool didWin;
-	//public int textRandomiser;
+	//public Animator animator;
+	public Animation anim;
 
 	void Start () 
 	{
@@ -32,6 +33,9 @@ public class Gameplay : MonoBehaviour
 		resourceNeeded_SpriteRend = GameObject.Find ("ResourceNeeded").GetComponent<SpriteRenderer> ();
 		background = GameObject.Find ("Background").GetComponent<SpriteRenderer> ();
 		amountNeeded_text = GameObject.Find ("AmountNeeded").GetComponent<Text> ();
+		anim = GameObject.Find ("ResourceNeeded").GetComponent<Animation> ();
+		//animator = GameObject.Find ("ResourceNeeded").GetComponent<Animator> ();
+		//animator.enabled = false;
 		howManyLeft = 20;
 		timer = 180f;
 		PickNewNeededResource ();
@@ -39,31 +43,26 @@ public class Gameplay : MonoBehaviour
 
 	void PickNewNeededResource()
 	{
+		//animator.enabled = true;
+		anim.Play();
 		resourceNeeded = Random.Range (0, 3);
-		//textRandomiser = Random.Range (0, 3);
 		switch (resourceNeeded) 
 		{
 		case 0:
 			resourceNeeded_SpriteRend.sprite = resourceNeeded_Sprite [resourceNeeded];
-			//resourceNeeded_SpriteRend.color = Color.red;
 			amountNeeded_text.color = Color.red;
-			//background.color = redtransparent;
 			Debug.Log (resourceNeeded);
 			break;
 		
 		case 1:
 			resourceNeeded_SpriteRend.sprite = resourceNeeded_Sprite [resourceNeeded];
-			//resourceNeeded_SpriteRend.color = Color.blue;
 			amountNeeded_text.color = Color.blue;
-			//background.color = bluetransparent;
 			Debug.Log (resourceNeeded);
 			break;
 
 		case 2:
 			resourceNeeded_SpriteRend.sprite = resourceNeeded_Sprite [resourceNeeded];
-			//resourceNeeded_SpriteRend.color = Color.yellow;
 			amountNeeded_text.color = Color.yellow;
-			//background.color = yellowtransparent;
 			Debug.Log (resourceNeeded);
 			break;
 		}
@@ -71,6 +70,7 @@ public class Gameplay : MonoBehaviour
 		amountNeeded = Random.Range (3, 6);
 		amountNeeded_text.text = "x" + amountNeeded.ToString ();
 		needNewResource = false;
+		//animator.enabled = false;
 	}
 
 	void Update () 
@@ -92,8 +92,10 @@ public class Gameplay : MonoBehaviour
 				SceneManager.LoadScene ("winlose");
 			}
 
-			if (needNewResource)
+			if (needNewResource) 
+			{
 				PickNewNeededResource ();
+			}
 
 			if (Input.GetTouch (0).phase == TouchPhase.Began && Input.touchCount > 0) 
 			{
@@ -113,7 +115,6 @@ public class Gameplay : MonoBehaviour
 			{
 				didWin = true;
 				Initiate.Fade ("winlose", Color.black, 2);
-				//SceneManager.LoadScene ("winlose");
 			}
 		}
 	}
