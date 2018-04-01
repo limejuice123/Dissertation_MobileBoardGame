@@ -5,19 +5,25 @@ using UnityEngine;
 public class WinOrLose_Sound : MonoBehaviour 
 {
 	public AudioSource source;
-	public AudioClip explosion;
+	public AudioClip win;
+	public AudioClip lose;
 	public Gameplay gameplay;
 
 	void Start () 
 	{
 		source = Camera.main.GetComponent<AudioSource> ();
-		source.enabled = false;
 		gameplay = GameObject.Find ("GameHandler").GetComponent<Gameplay> ();
 
-		if (gameplay.didWin == false) 
+		if (gameplay.didWin == true) 
 		{
-			source.enabled = true;
+			source.clip = win;
+			source.Play ();
+		} 
+		else 
+		{
+			source.clip = lose;
 			source.Play ();
 		}
+
 	}
 }
