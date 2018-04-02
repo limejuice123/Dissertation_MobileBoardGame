@@ -22,27 +22,30 @@ public class RuleScript : MonoBehaviour
 		RuleImage = GameObject.Find ("RuleImage").GetComponent<Image> ();
 		RuleImage.enabled = false;
 		RulePage = 0;
-		NextButton.onClick.AddListener (NextButtonClick);
-		PreviousButton.onClick.AddListener (PreviousButtonClick);
-		BackToMenuButton.onClick.AddListener (BackToMenuClick);
+		//NextButton.onClick.AddListener (NextButtonClick);
+		//PreviousButton.onClick.AddListener (PreviousButtonClick);
+		//BackToMenuButton.onClick.AddListener (BackToMenuClick);
+		//SetText ();
 	}
 
-	void NextButtonClick () 
+	/*void NextButtonClick () 
 	{
 		if (RulePage < 5)
 			RulePage++;
+		SetText ();
 	}
 
 	void PreviousButtonClick ()
 	{
 		if (RulePage > 0)
 			RulePage--;
+		SetText ();
 	}
 
 	void BackToMenuClick ()
 	{
 		Initiate.Fade ("mainmenu", Color.black, 2);
-	}
+	}*/
 
 	void Update ()
 	{

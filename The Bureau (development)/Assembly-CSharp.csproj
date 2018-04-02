@@ -9,7 +9,7 @@
     <ProductVersion>10.0.20506</ProductVersion>
     <SchemaVersion>2.0</SchemaVersion>
     <RootNamespace></RootNamespace>
-    <ProjectGuid>{45E92ABF-784E-52C2-3AD2-E2B673A355CE}</ProjectGuid>
+    <ProjectGuid>{F7242D92-0619-F868-D20F-209D42B9E784}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
     <AssemblyName>Assembly-CSharp</AssemblyName>
@@ -62,7 +62,11 @@
      <Compile Include="Assets\Scripts\Navigation\BackToMenu.cs" />
      <Compile Include="Assets\Scripts\Navigation\PressPlay.cs" />
      <Compile Include="Assets\Scripts\Navigation\Quit.cs" />
+     <Compile Include="Assets\Scripts\Navigation\RulesButtons\BackButton.cs" />
+     <Compile Include="Assets\Scripts\Navigation\RulesButtons\NextButton.cs" />
+     <Compile Include="Assets\Scripts\Navigation\RulesButtons\PreviousButton.cs" />
      <Compile Include="Assets\Scripts\Navigation\RuleScript.cs" />
+     <Compile Include="Assets\Scripts\Navigation\ToRules.cs" />
      <Compile Include="Assets\Simple Scene Fade Load System\Scripts\Fader.cs" />
      <Compile Include="Assets\Simple Scene Fade Load System\Scripts\Initiate.cs" />
      <None Include="Assets\Simple Scene Fade Load System\ReadMeFirst.txt" />
