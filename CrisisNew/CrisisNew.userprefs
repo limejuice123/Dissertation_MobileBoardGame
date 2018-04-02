@@ -1,13 +1,8 @@
 ﻿<Properties StartupItem="Assembly-CSharp.csproj">
   <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" PreferredExecutionTarget="Unity.Instance.Unity Editor" />
-  <MonoDevelop.Ide.Workbench ActiveDocument="Assets\Scripts\Gameplay\WinOrLose_Sound.cs">
+  <MonoDevelop.Ide.Workbench ActiveDocument="Assets\Scripts\Navigation\RuleScript.cs">
     <Files>
-      <File FileName="Assets\Scripts\Gameplay\Gameplay.cs" Line="1" Column="1" />
-      <File FileName="Assets\Scripts\Gameplay\SoundScript.cs" Line="1" Column="1" />
-      <File FileName="Assets\Scripts\Gameplay\DontHaveResource.cs" Line="1" Column="1" />
-      <File FileName="Assets\Scripts\Ambience\MenuBackground.cs" Line="1" Column="1" />
-      <File FileName="Assets\Scripts\Navigation\Quit.cs" Line="1" Column="1" />
-      <File FileName="Assets\Scripts\Gameplay\WinOrLose_Sound.cs" Line="26" Column="4" />
+      <File FileName="Assets\Scripts\Navigation\RuleScript.cs" Line="33" Column="15" />
     </Files>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.DebuggingService.Breakpoints>

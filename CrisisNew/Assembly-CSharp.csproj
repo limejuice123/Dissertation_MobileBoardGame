@@ -62,6 +62,7 @@
      <Compile Include="Assets\Scripts\Navigation\BackToMenu.cs" />
      <Compile Include="Assets\Scripts\Navigation\PressPlay.cs" />
      <Compile Include="Assets\Scripts\Navigation\Quit.cs" />
+     <Compile Include="Assets\Scripts\Navigation\RuleScript.cs" />
      <Compile Include="Assets\Simple Scene Fade Load System\Scripts\Fader.cs" />
      <Compile Include="Assets\Simple Scene Fade Load System\Scripts\Initiate.cs" />
      <None Include="Assets\Simple Scene Fade Load System\ReadMeFirst.txt" />
