@@ -154,7 +154,9 @@ public class GameHandling : MonoBehaviour
 		{
 			Transform centre = GameObject.Find ("Centre").GetComponent<Transform> ();
 
-			countdown = countdown - Time.deltaTime;
+			if (countdown > 0)
+				countdown = countdown - Time.deltaTime;
+
 			countdown_text.text = countdown.ToString ("F");
 
 			if (countdown <= 0) 
@@ -198,6 +200,7 @@ public class GameHandling : MonoBehaviour
 		if (currentScene.name == "finish") 
 		{
 			Transform middle = GameObject.Find ("Middle").GetComponent<Transform> ();
+			//counter = 0;
 			
 			/*if (Input.GetKey ("d"))
 				currentCard.transform.Translate (10f * Time.deltaTime, 0f, 0f);
@@ -227,14 +230,14 @@ public class GameHandling : MonoBehaviour
 				{
 					counter++;
 					currentCard = wonCards [counter];
-					currentCard.transform.position = new Vector2 (0f, -0.4f);
+					//currentCard.transform.position = new Vector2 (0f, -0.4f);
 				}
 
 				if (pos.x < middle.position.x) 
 				{
 					counter++;
 					currentCard = wonCards [counter];
-					currentCard.transform.position = new Vector2 (0f, -0.4f);
+					//currentCard.transform.position = new Vector2 (0f, -0.4f);
 				}
 			}
 
