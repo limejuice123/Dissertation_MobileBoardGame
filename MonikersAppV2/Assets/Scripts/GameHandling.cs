@@ -68,7 +68,11 @@ public class GameHandling : MonoBehaviour
 			counter = 0;
 			currentCard = wonCards [counter];
 			currentCard.transform.position = new Vector2 (0f, -0.4f);
-			currentCard.GetComponent<SpriteRenderer> ().enabled = true;
+			for (int i = 0; i < wonCards.Count; i++) 
+			{
+				currentCard = wonCards [i];
+				currentCard.GetComponent<SpriteRenderer> ().enabled = true;
+			}
 		}
 	}
 
@@ -115,23 +119,20 @@ public class GameHandling : MonoBehaviour
 		currentCard.transform.position = new Vector2 (0f, -0.4f);
 	}
 
+	void ResetWonCards()
+	{
+		for (int i = 0; i < wonCards.Count; i++) 
+		{
+			currentCard = wonCards [i];
+			currentCard.GetComponent<SpriteRenderer> ().enabled = true;
+		}
+	}
+
 	void Update () 
 	{
 		if (currentScene.name == "deckbuilding") 
 		{
 			Transform centrepoint = GameObject.Find ("CentrePoint").GetComponent<Transform> ();
-
-			/*if (Input.GetKey ("d"))
-				currentCard.transform.Translate (10f * Time.deltaTime, 0f, 0f);
-
-			if (Input.GetKey ("a"))
-				currentCard.transform.Translate (-10f * Time.deltaTime, 0f, 0f);
-
-			if (currentCard.transform.position.x >= GameObject.Find ("YayTag").GetComponent<Transform> ().position.x)
-				AddCardToList ();
-
-			if (currentCard.transform.position.x <= GameObject.Find ("NayTag").GetComponent<Transform> ().position.x)
-				DiscardCardFromList(); */
 
 			if (Input.GetTouch (0).phase == TouchPhase.Began && Input.touchCount > 0) 
 			{
@@ -167,18 +168,6 @@ public class GameHandling : MonoBehaviour
 				timer_text.text = timer.ToString ("F");
 			}
 
-			/*if (Input.GetKey ("d"))
-				currentCard.transform.Translate (10f * Time.deltaTime, 0f, 0f);
-
-			if (Input.GetKey ("a"))
-				currentCard.transform.Translate (-10f * Time.deltaTime, 0f, 0f);
-
-			if (currentCard.transform.position.x >= GameObject.Find ("YayTag").GetComponent<Transform> ().position.x)
-				WinCard ();
-
-			if (currentCard.transform.position.x <= GameObject.Find ("NayTag").GetComponent<Transform> ().position.x)
-				SkipCard (); */
-
 			if (Input.GetTouch (0).phase == TouchPhase.Began && Input.touchCount > 0) 
 			{
 				var pos = Camera.main.ScreenToWorldPoint (Input.GetTouch (0).position);
@@ -199,50 +188,16 @@ public class GameHandling : MonoBehaviour
 
 		if (currentScene.name == "finish") 
 		{
-			Transform middle = GameObject.Find ("Middle").GetComponent<Transform> ();
-			//counter = 0;
-			
-			/*if (Input.GetKey ("d"))
-				currentCard.transform.Translate (10f * Time.deltaTime, 0f, 0f);
-
-			if (Input.GetKey ("a"))
-				currentCard.transform.Translate (-10f * Time.deltaTime, 0f, 0f);
-
-			if (currentCard.transform.position.x >= GameObject.Find ("YayTag").GetComponent<Transform> ().position.x) 
-			{
-				counter++;
-				currentCard = wonCards [counter];
-				currentCard.transform.position = new Vector2 (0f, -0.4f);
-			}
-
-			if (currentCard.transform.position.x <= GameObject.Find ("NayTag").GetComponent<Transform> ().position.x) 
-			{
-				counter++;
-				currentCard = wonCards [counter];
-				currentCard.transform.position = new Vector2 (0f, -0.4f);
-			} */
-
 			if (Input.GetTouch (0).phase == TouchPhase.Began && Input.touchCount > 0) 
 			{
-				var pos = Camera.main.ScreenToWorldPoint (Input.GetTouch (0).position);
-
-				if (pos.x > middle.position.x)
-				{
-					counter++;
-					currentCard = wonCards [counter];
-					//currentCard.transform.position = new Vector2 (0f, -0.4f);
-				}
-
-				if (pos.x < middle.position.x) 
-				{
-					counter++;
-					currentCard = wonCards [counter];
-					//currentCard.transform.position = new Vector2 (0f, -0.4f);
-				}
+				currentCard.GetComponent<SpriteRenderer> ().enabled = false;
+				counter++;
+				currentCard = wonCards [counter];
 			}
 
 			if (counter >= wonCards.Count) 
 			{
+				ResetWonCards ();
 				counter = 0;
 			}
 		}
