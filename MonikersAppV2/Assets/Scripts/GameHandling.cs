@@ -56,10 +56,13 @@ public class GameHandling : MonoBehaviour
 		{
 			currentScene = scene;
 			counter = 0;
+			timer = 0;
+			countdown = 3f;
 			timer_text = GameObject.Find ("timer").GetComponent<Text> ();
 			countdown_text = GameObject.Find ("Countdown").GetComponent<Text> ();
 			currentCard = cardsInPlay [counter];
 			currentCard.transform.position = new Vector2(0f, -0.4f);
+			StartCoroutine (Timer());
 		}
 
 		if (scene.name == "finish") 
@@ -68,10 +71,12 @@ public class GameHandling : MonoBehaviour
 			counter = 0;
 			currentCard = wonCards [counter];
 			currentCard.transform.position = new Vector2 (0f, -0.4f);
+
 			for (int i = 0; i < wonCards.Count; i++) 
 			{
 				currentCard = wonCards [i];
 				currentCard.GetComponent<SpriteRenderer> ().enabled = true;
+				cardsInPlay.Add (currentCard);
 			}
 		}
 	}
@@ -164,8 +169,8 @@ public class GameHandling : MonoBehaviour
 			{
 				countdown_text.gameObject.SetActive (false);
 				currentCard.GetComponent<SpriteRenderer> ().enabled = true;
-				timer = timer + Time.deltaTime;
-				timer_text.text = timer.ToString ("F");
+				//timer = timer + Time.deltaTime;
+				timer_text.text = timer.ToString ();
 			}
 
 			if (Input.GetTouch (0).phase == TouchPhase.Began && Input.touchCount > 0) 
@@ -201,5 +206,17 @@ public class GameHandling : MonoBehaviour
 				counter = 0;
 			}
 		}
+	}
+
+	IEnumerator Timer()
+	{
+		while (timer < 60) 
+		{
+			yield return new WaitForSeconds (1);
+			timer++;
+		}
+
+		if (timer == 60)
+			SceneManager.LoadScene ("finish");
 	}
 }
