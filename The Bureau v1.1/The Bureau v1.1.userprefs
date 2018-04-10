@@ -1,0 +1,16 @@
+﻿<Properties StartupItem="Assembly-CSharp.csproj">
+  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" PreferredExecutionTarget="Unity.Instance.Unity Editor" />
+  <MonoDevelop.Ide.Workbench ActiveDocument="Assets\Scripts\Gameplay\WinOrLose.cs">
+    <Files>
+      <File FileName="Assets\Scripts\Navigation\BackToMenu.cs" Line="8" Column="71" />
+      <File FileName="Assets\Scripts\Navigation\Quit.cs" Line="8" Column="55" />
+      <File FileName="Assets\Scripts\Gameplay\DontHaveResource.cs" Line="7" Column="46" />
+      <File FileName="Assets\Scripts\Gameplay\SoundScript.cs" Line="7" Column="37" />
+      <File FileName="Assets\Scripts\Gameplay\WinOrLose.cs" Line="8" Column="61" />
+    </Files>
+  </MonoDevelop.Ide.Workbench>
+  <MonoDevelop.Ide.DebuggingService.Breakpoints>
+    <BreakpointStore />
+  </MonoDevelop.Ide.DebuggingService.Breakpoints>
+  <MonoDevelop.Ide.DebuggingService.PinnedWatches />
+</Properties>

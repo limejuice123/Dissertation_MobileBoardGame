@@ -2,15 +2,18 @@
 using System.Collections.Generic;
 using UnityEngine;
 
+//this is an old, unused script that was to control the old sound design
 public class SoundControl : MonoBehaviour 
 {
 	public Gameplay gameplay;
 	public AudioListener listener;
+	//the script utilisied multiple audio sources
 	public AudioSource source;
 	public AudioSource source2;
 	public AudioSource source3;
 	public AudioSource source4;
 	public AudioSource source5;
+	//all of the old audio clips
 	public AudioClip bombcount;
 	public AudioClip bombcount2x;
 	public AudioClip bombcount3x;
@@ -40,6 +43,7 @@ public class SoundControl : MonoBehaviour
 		FindWhichSound ();
 	}
 
+	//this script would have checked against the timer and enable new sounds (disabling old ones) once certain points of the game had been reached.
 	void FindWhichSound()
 	{
 		if (gameplay.timer > 60 && gameplay.prepcanvas.enabled == false) 

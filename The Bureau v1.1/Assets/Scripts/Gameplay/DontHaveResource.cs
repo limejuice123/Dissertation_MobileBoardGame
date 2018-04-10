@@ -1,39 +1,32 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+//this script uses the UI APIs.
 using UnityEngine.UI;
 
+//this class controls the in game skip button
 public class DontHaveResource : MonoBehaviour 
 {
+	//the variable holding the button to be pressed.
 	public Button btn;
+	//allows access to the variables located in Gameplay.cs
 	public Gameplay gameplay;
-	public Text timertext;
 
 	void Start () 
 	{
+		//finds the button and assigns it to a variable.
 		btn = GameObject.Find ("DontHave").GetComponent<Button> ();
+		//finds the gameObject with Gameplay.cs attached and assigns said component to a variable.
 		gameplay = GameObject.Find ("GameHandler").GetComponent<Gameplay> ();
-		//timertext = GameObject.Find ("TimerText").GetComponent<Text> ();
+		//allows tasks to be executed upon pressing the button.
 		btn.onClick.AddListener (TaskOnClick);
 	}
 
 	void TaskOnClick () 
 	{
+		//depletes the timer by 20 seconds when pressed
 		gameplay.timer = gameplay.timer - 20;
-		//StartCoroutine (Flasher());
+		//moves to the next round.
 		gameplay.needNewResource = true;
 	}
-
-	/*IEnumerator Flasher()
-	{
-		for (int i = 0; i < 5; i++) 
-		{
-			btn.image.color = Color.red;
-			timertext.color = Color.red;
-			yield return new WaitForSeconds (0.1f);
-			btn.image.color = Color.white;
-			timertext.color = Color.white;
-			yield return new WaitForSeconds (0.1f);
-		}
-	} */
 }

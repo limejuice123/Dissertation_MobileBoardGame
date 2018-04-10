@@ -1,11 +1,14 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+//this script uses the UI and SceneManagement APIs
 using UnityEngine.UI;
 using UnityEngine.SceneManagement;
 
+//this class is for navigating the in-built rules page
 public class RuleScript : MonoBehaviour 
 {
+	//these variables contain references to the buttons on screen and the text and images displayed. There is an int variable to keep track of which page you are on.
 	public Button NextButton;
 	public Button PreviousButton;
 	public Button BackToMenuButton;
@@ -15,40 +18,21 @@ public class RuleScript : MonoBehaviour
 
 	void Start () 
 	{
+		//assigns all components to their respective variables
 		NextButton = GameObject.Find ("NextButton").GetComponent<Button> ();
 		PreviousButton = GameObject.Find ("PreviousButton").GetComponent<Button> ();
 		BackToMenuButton = GameObject.Find ("BackToMenuButton").GetComponent<Button> ();
 		RuleText = GameObject.Find ("ruletext").GetComponent<Text> ();
 		RuleImage = GameObject.Find ("RuleImage").GetComponent<Image> ();
+		//makes the image displayed on page 4 invisible
 		RuleImage.enabled = false;
+		//sets the page number to 1 (it is referred to as 0 for programming)
 		RulePage = 0;
-		//NextButton.onClick.AddListener (NextButtonClick);
-		//PreviousButton.onClick.AddListener (PreviousButtonClick);
-		//BackToMenuButton.onClick.AddListener (BackToMenuClick);
-		//SetText ();
 	}
-
-	/*void NextButtonClick () 
-	{
-		if (RulePage < 5)
-			RulePage++;
-		SetText ();
-	}
-
-	void PreviousButtonClick ()
-	{
-		if (RulePage > 0)
-			RulePage--;
-		SetText ();
-	}
-
-	void BackToMenuClick ()
-	{
-		Initiate.Fade ("mainmenu", Color.black, 2);
-	}*/
 
 	void Update ()
 	{
+		//this switch checks against which page the user is on, and changes the text/image accordingly.
 		switch (RulePage)
 		{
 		case 0:
